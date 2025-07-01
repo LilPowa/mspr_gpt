@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  # Service Backend
+  backend:
+    build:
+      context: ./mspr63-back-rattrapage
+    ports:
+      - "3000:3000"
+    environment:
+      # On utilise la vraie URI de MongoDB Atlas
+      MONGO_URI: "mongodb+srv://aurelienserre:Skype.30@cluster0.rrrvv0n.mongodb.net/appMSPR?retryWrites=true&w=majority&appName=Cluster0"
+      PORT: 3000
+    # On n'a plus besoin de 'depends_on' car la DB n'est plus un service local
+
+  # Service Frontend
+  frontend:
+    build:
+      context: ./mspr63-front-rattrapage
+    ports:
+      - "8080:80"
