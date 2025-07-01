@@ -1,0 +1,37 @@
+<div class="scan-container">
+  <h2 class="title">Mes scans</h2>
+
+  <div class="filter-bar">
+    <label for="espece-select">Filtrer par espèce :</label>
+    <select id="espece-select" [(ngModel)]="selectedEspece" (change)="onEspeceChange()">
+      <option value="">Toutes les espèces</option>
+      <option *ngFor="let espece of especes" [value]="espece">{{ espece }}</option>
+    </select>
+  </div>
+
+  <div *ngIf="scans.length === 0" class="empty">
+    Aucun scan enregistré pour ce filtre.
+  </div>
+
+  <div class="scan-list">
+    <div *ngFor="let scan of scans" class="scan-card">
+      <img [src]="scan.photo" alt="photo scan" class="scan-img" />
+      <div class="scan-details">
+        <p>
+          <strong>Espèce détectée : </strong>
+          <a [routerLink]="['/fiche-espece', scan.especeDetectee]" class="text-blue-500 underline">
+            {{ scan.especeDetectee }}
+          </a>
+        </p>
+        <p><strong>Date :</strong> {{ scan.date | date:'medium' }}</p>
+        <p><strong>Taux de confiance :</strong> {{ scan.confidence | number:'1.2-2' }} %</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <button (click)="changePage(-1)" [disabled]="page === 1">Précédent</button>
+    <span>Page {{ page }} / {{ totalPages }}</span>
+    <button (click)="changePage(1)" [disabled]="page === totalPages">Suivant</button>
+  </div>
+</div>

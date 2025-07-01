@@ -1,0 +1,40 @@
+<div class="form-container">
+  <h2>Ajouter une espèce animale</h2>
+
+  <form (ngSubmit)="ajouterEspece()">
+    <div class="form-group">
+      <input [(ngModel)]="especeData.espece" name="espece" placeholder="Espèce" required />
+    </div>
+    <div class="form-group">
+      <input [(ngModel)]="especeData.nomLatin" name="nomLatin" placeholder="Nom latin" required />
+    </div>
+    <div class="form-group">
+      <textarea [(ngModel)]="especeData.description" name="description" placeholder="Description" required></textarea>
+    </div>
+    <div class="form-group">
+      <select [(ngModel)]="especeData.famille" name="famille" required>
+        <option value="" disabled selected>Sélectionnez une famille</option>
+        <option *ngFor="let f of familles" [value]="f">{{ f }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <input [(ngModel)]="especeData.taille" name="taille" placeholder="Taille" required />
+    </div>
+    <div class="form-group">
+      <input [(ngModel)]="especeData.region" name="region" placeholder="Région" required />
+    </div>
+    <div class="form-group">
+      <input [(ngModel)]="especeData.habitat" name="habitat" placeholder="Habitat" required />
+    </div>
+    <div class="form-group">
+      <input [(ngModel)]="especeData.funFact" name="funFact" placeholder="Fun fact" required />
+    </div>
+    <div class="form-group">
+      <label for="image">Image de l'espèce</label>
+      <input type="file" id="image" accept="image/*" (change)="onImageSelected($event)" />
+    </div>
+
+    <button type="submit">Ajouter</button>
+    <p class="message" *ngIf="message">{{ message }}</p>
+  </form>
+</div>

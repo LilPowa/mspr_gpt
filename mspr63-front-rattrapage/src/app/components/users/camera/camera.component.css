@@ -1,0 +1,200 @@
+/* -------- Preview Caméra -------- */
+.camera-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.preview-box {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 3/4;
+  border: solid 2px #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+video,
+.captured {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* -------- Boutons -------- */
+.capture-btn,
+.remove-btn {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #2c3e50;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.capture-btn {
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px;
+  font-size: 20px;
+}
+
+.remove-btn {
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.capture-btn:hover,
+.remove-btn:hover {
+  background-color: #fff;
+}
+
+/* -------- Résultats -------- */
+.results {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.result-card {
+  background-color: #30c48d;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.result-imgs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.user-photo,
+.species-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #eee;
+}
+
+.result-info {
+  text-align: center;
+}
+
+.result-info h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.4rem;
+  color: #1a1a1a;
+}
+
+.result-info p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+
+/* -------- Loader -------- */
+.loader-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #30c48d;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* -------- Responsive -------- */
+@media (min-width: 768px) {
+  .result-card {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .result-info {
+    text-align: left;
+    flex: 1;
+  }
+
+  .result-imgs {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .camera-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .preview-box {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .capture-btn,
+  .remove-btn {
+    padding: 12px;
+    font-size: 18px;
+  }
+
+  .results {
+    padding: 1rem;
+  }
+
+  .result-card {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .result-imgs {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .user-photo,
+  .species-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .result-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .result-info p {
+    font-size: 0.9rem;
+  }
+}

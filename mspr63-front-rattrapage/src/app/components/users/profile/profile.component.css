@@ -1,0 +1,119 @@
+.profile-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #30c48d;
+  color: #2c3e50;
+}
+
+h2, h3 {
+  text-align: center;
+  color: #fff;
+}
+
+.message {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.success {
+  color: #2e7d32;
+  background-color: #e9f7e7;
+  border: 1px solid #2e7d32;
+}
+
+.error {
+  color: #b71c1c;
+  background-color: #fdecea;
+  border: 1px solid #b71c1c;
+}
+
+.user-info {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-info p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: white;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  background-color: #f7f7f7;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: 3px solid #25a97a;
+  background-color: #fff;
+}
+
+button {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #3f3f3f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2f2f2f;
+}
+
+button:active {
+  transform: translateY(2px);
+  background-color: #3e8e41;
+}
+
+button.danger {
+  background-color: #c0392b;
+}
+
+button.danger:hover {
+  background-color: #a93226;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .profile-container {
+    padding: 20px;
+    margin: 30px 10px;
+  }
+
+  h2, h3 {
+    font-size: 1.5rem;
+  }
+
+  input, button {
+    font-size: 1rem;
+  }
+}

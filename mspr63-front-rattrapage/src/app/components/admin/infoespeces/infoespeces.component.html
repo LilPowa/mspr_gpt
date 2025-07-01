@@ -1,0 +1,50 @@
+<div class="container">
+  <h1>Liste des espèces</h1>
+
+  <div *ngFor="let espece of especes" class="espece-card">
+    <ng-container *ngIf="editId !== espece._id; else editForm">
+      <div class="espece-content">
+        <img *ngIf="espece.image" [src]="espece.image" alt="Image de {{ espece.espece }}" class="espece-image" />
+
+        <div class="espece-info">
+          <h2>{{ espece.espece }} ({{ espece.nomLatin }})</h2>
+          <p><strong>Description :</strong> {{ espece.description }}</p>
+          <p><strong>Famille :</strong> {{ espece.famille }}</p>
+          <p><strong>Taille :</strong> {{ espece.taille }}</p>
+          <p><strong>Région :</strong> {{ espece.region }}</p>
+          <p><strong>Habitat :</strong> {{ espece.habitat }}</p>
+          <p><strong>Fun Fact :</strong> {{ espece.funFact }}</p>
+
+          <div class="actions">
+            <button (click)="startEdit(espece)">Modifier</button>
+            <button (click)="deleteEspece(espece._id)">Supprimer</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-template #editForm>
+      <div class="edit-form">
+        <input [(ngModel)]="editedEspece.espece" placeholder="Nom de l'espèce" />
+        <input [(ngModel)]="editedEspece.nomLatin" placeholder="Nom latin" />
+        <input [(ngModel)]="editedEspece.description" placeholder="Description" />
+        <input [(ngModel)]="editedEspece.famille" placeholder="Famille" />
+        <input [(ngModel)]="editedEspece.taille" placeholder="Taille" />
+        <input [(ngModel)]="editedEspece.region" placeholder="Région" />
+        <input [(ngModel)]="editedEspece.habitat" placeholder="Habitat" />
+        <input [(ngModel)]="editedEspece.funFact" placeholder="Fun Fact" />
+        <input type="file" (change)="handleFileInput($event)" />
+        <div class="actions">
+          <button (click)="saveEdit()">Enregistrer</button>
+          <button (click)="cancelEdit()">Annuler</button>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="pagination">
+    <button (click)="changePage(-1)" [disabled]="currentPage === 1">Précédent</button>
+    <span>Page {{ currentPage }} / {{ totalPages }}</span>
+    <button (click)="changePage(1)" [disabled]="currentPage === totalPages">Suivant</button>
+  </div>
+</div>

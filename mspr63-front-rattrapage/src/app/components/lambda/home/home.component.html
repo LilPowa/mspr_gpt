@@ -1,0 +1,32 @@
+<div class="home-container">
+  <h1>Bienvenue chez WildLens</h1>
+  <p class="intro">
+    WildLens est une association française engagée dans la protection de la faune sauvage.
+    Grâce à la technologie, nous vous aidons à mieux comprendre et préserver les animaux autour de vous.
+  </p>
+
+  <!-- Carrousel existant -->
+  <section class="carousel-section" *ngIf="especes.length > 0">
+    <div class="carousel">
+      <div class="slide">
+        <h2>{{ especes[currentIndex].espece }}</h2>
+        <img 
+          [src]="especes[currentIndex].image || '/assets/especes/' + especes[currentIndex].espece + '.jpg'" 
+          alt="{{ especes[currentIndex].espece }}" 
+        />
+        <button (click)="goToFiche(especes[currentIndex].espece)">
+          Voir la fiche technique
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="wildlens-info">
+    <h3>À propos de WildLens</h3>
+    <p>
+      WildLens collecte des fonds pour protéger la faune dans les forêts sauvages et mène des campagnes de sensibilisation auprès du public. 
+      Grâce à notre application, vous pouvez scanner les empreintes laissées par les animaux, apprendre à les identifier, et contribuer à des données de suivi utiles à la préservation.
+    </p>
+  </section>
+</div>

@@ -1,0 +1,155 @@
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #3498db;
+  --input-bg: #f5f7fa;
+  --text-color: #333;
+  --radius: 12px;
+  --font: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Base styles (Mobile First) */
+body {
+  margin: 0;
+  font-family: var(--font);
+  background-color: #f0f0f0;
+}
+
+.form-container {
+  background-color: #30c48d;
+  padding: 20px;
+  margin: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  background-color: var(--input-bg);
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent-color);
+  outline: none;
+  background-color: #fff;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  background-color: #3f3f3f;
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2f2f2f;
+}
+
+.message {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #fce4e4;
+  color: red;
+  border: 1px solid red;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* Responsive for tablets and desktops */
+@media (min-width: 768px) {
+  .form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  button {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+
+/* Responsive mobile & tablette */
+@media (max-width: 767px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stat {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .chart-section {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  .stat h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat p {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .stats {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .stat {
+    flex: 1 1 calc(50% - 0.5rem);
+    min-width: 180px;
+  }
+
+  .chart-section {
+    padding: 1.5rem;
+  }
+}

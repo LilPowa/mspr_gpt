@@ -1,0 +1,53 @@
+<div *ngIf="dbConnectionFailed" class="error-banner">
+  ⚠️ Connexion à l'API et à la base de données non établie.
+</div>
+
+<div class="navbar">
+  <!-- LAMBDA - toujours visibles -->
+  <a *ngIf="!isAdmin" routerLink="/home" routerLinkActive="text-blue-400" aria-label="Home">
+    <span>Accueil</span>
+  </a>
+  <a *ngIf="!isLoggedIn" routerLink="/inscription" routerLinkActive="text-blue-400" aria-label="Inscription">
+    <span>Inscription</span>
+  </a>
+  <a *ngIf="!isLoggedIn" routerLink="/connexion" routerLinkActive="text-blue-400" aria-label="Connexion">
+    <span>Connexion</span>
+  </a>
+
+  <!-- UTILISATEUR -->
+  <ng-container *ngIf="isUser">
+    <a routerLink="/camera" routerLinkActive="text-blue-400" aria-label="Scan">
+      <span>Camera</span>
+    </a>
+  <a routerLink="/scans" routerLinkActive="text-blue-400" aria-label="Mes scans">
+    <span>Mes Scans</span>
+   </a>
+    <a routerLink="/profil" routerLinkActive="text-blue-400" aria-label="Profil" align="right">
+      <span>Profil</span>
+    </a>
+  </ng-container>
+
+  <!-- ADMIN -->
+  <ng-container *ngIf="isAdmin">
+    <a routerLink="/dashboard" routerLinkActive="text-blue-400" aria-label="Ajout">
+      <span>Dashboard</span>
+    </a>
+    <a routerLink="/ajout" routerLinkActive="text-blue-400" aria-label="Ajout">
+      <span>Ajouter Espèces</span>
+    </a>
+    <a routerLink="/view" routerLinkActive="text-blue-400" aria-label="View">
+      <span>Voir Espèces</span>
+    </a>
+    <a routerLink="/user" routerLinkActive="text-blue-400" aria-label="Utilisateurs">
+      <span>Utilisateurs</span>
+    </a>
+    <a routerLink="/vue-scans" routerLinkActive="text-blue-400" aria-label="Scans">
+      <span>Scans</span>
+    </a>
+  </ng-container>
+
+  <div class="spacer"></div>
+
+  <!-- Déconnexion -->
+  <button *ngIf="isLoggedIn" class="logout-btn" (click)="logout()">Déconnexion</button>
+</div>

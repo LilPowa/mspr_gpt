@@ -1,0 +1,39 @@
+<div class="dashboard-container">
+  <div class="stats">
+    <div class="stat">
+      <h3>Aujourd'hui</h3>
+      <p>{{ stats.today }}</p>
+    </div>
+    <div class="stat">
+      <h3>Cette semaine</h3>
+      <p>{{ stats.week }}</p>
+    </div>
+    <div class="stat">
+      <h3>Ce mois</h3>
+      <p>{{ stats.month }}</p>
+    </div>
+    <div class="stat">
+      <h3>Cette année</h3>
+      <p>{{ stats.year }}</p>
+    </div>
+    <div class="stat">
+      <h3>Utilisateurs</h3>
+      <p>{{ stats.users }}</p>
+    </div>
+    <div class="stat">
+      <h3>Temps moyen d'exécution (ms)</h3>
+      <p>{{ stats.avgExecutionTime }}</p>
+    </div>
+    <div class="stat">
+      <h3>Confiance moyenne (%)</h3>
+      <p>{{ stats.avgConfidence }}</p>
+    </div>
+  </div>
+  <div class="chart-section">
+    <canvas id="speciesChart"></canvas>
+  </div>
+  <br><br>
+  <div class="chart-section">
+    <canvas id="executionChart"></canvas>
+  </div>
+</div>

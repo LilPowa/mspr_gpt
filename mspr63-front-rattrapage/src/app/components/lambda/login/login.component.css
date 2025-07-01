@@ -1,0 +1,71 @@
+/* login.component.css */
+.login-container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #30c48d;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 10px;
+    border: none; 
+    background-color: #3f3f3f;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  button[disabled] {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .message {
+    color: red;
+    text-align: center;
+  }
+  
+  .redirect-link {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .redirect-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .redirect-button:hover {
+    background-color: #218838;
+  }
+  

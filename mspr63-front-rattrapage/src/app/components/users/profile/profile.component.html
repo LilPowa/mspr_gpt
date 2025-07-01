@@ -1,0 +1,35 @@
+<div class="profile-container">
+  <h2>Mon Profil</h2>
+
+  <div *ngIf="message" class="message success" role="alert" aria-live="polite">{{ message }}</div>
+  <div *ngIf="errorMessage" class="message error" role="alert" aria-live="assertive">{{ errorMessage }}</div>
+
+  <div class="user-info">
+    <p><strong>Nom :</strong> {{ user.nom }} {{ user.prenom }}</p>
+    <p><strong>Email :</strong> {{ user.email }}</p>
+  </div>
+
+  <h3>Modifier le mot de passe</h3>
+
+  <div class="form-group">
+    <label for="currentPassword">Mot de passe actuel</label>
+    <input type="password" id="currentPassword" [(ngModel)]="currentPassword"
+           placeholder="Mot de passe actuel" aria-label="Mot de passe actuel"
+           autocomplete="current-password" />
+  </div>
+
+  <div class="form-group">
+    <label for="newPassword">Nouveau mot de passe</label>
+    <input type="password" id="newPassword" [(ngModel)]="newPassword"
+           placeholder="Nouveau mot de passe" aria-label="Nouveau mot de passe"
+           autocomplete="new-password" />
+  </div>
+
+  <button (click)="updateProfile()" aria-label="Mettre à jour le mot de passe">Mettre à jour</button>
+
+  <hr />
+
+  <h3>Supprimer le compte</h3>
+  <p class="warning" style="color: red;">Cette action est irréversible. Toutes vos données seront supprimées.</p>
+  <button (click)="deleteAccount()" class="danger" aria-label="Supprimer définitivement mon compte">Supprimer mon compte</button>
+</div>

@@ -1,0 +1,107 @@
+.home-container {
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f9fb;
+  color: #333;
+}
+
+.intro {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel-section {
+  margin-bottom: 3rem;
+}
+
+.carousel {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 1rem;
+}
+
+.slide {
+  transition: all 0.5s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.wildlens-info {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #e8f0fe;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* -------- RESPONSIVE (mobile) -------- */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .carousel {
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+
+  .slide img {
+    max-height: 200px;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .wildlens-info {
+    padding: 1.5rem 1rem;
+    margin: 1rem;
+  }
+
+  .wildlens-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .wildlens-info p {
+    font-size: 1rem;
+  }
+}

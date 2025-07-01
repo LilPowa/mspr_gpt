@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Liste des utilisateurs</h2>
+
+  <div *ngIf="loading" class="loading">Chargement...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <ul *ngIf="!loading && users.length > 0" class="users-list">
+    <li *ngFor="let user of users" class="user-item">
+      <div class="user-info">
+        <strong>{{ user.nom }} {{ user.prenom }}</strong><br />
+        <small>{{ user.email }}</small><br />
+        <small>Scans : {{ user.scanCount }}</small>
+      </div>
+    </li>
+  </ul>
+
+  <div *ngIf="!loading && users.length === 0" class="no-users">Aucun utilisateur trouvé.</div>
+
+  <div class="pagination">
+    <button (click)="previousPage()" [disabled]="page === 1">Précédent</button>
+    <span>Page {{ page }} / {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="page === totalPages">Suivant</button>
+  </div>
+</div>

@@ -1,0 +1,177 @@
+.fiche-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #30c48d;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.species-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 2.4rem;
+  margin: 0;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.latin-name {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #7f8c8d;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.info-item h4 {
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+.info-item p {
+  margin: 0;
+  color: #555;
+}
+
+.description-section,
+.funfact-section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-left: 4px solid white;
+  background-color: #f4fefc;
+  border-radius: 10px;
+}
+
+.description-section h3,
+.funfact-section h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.back-btn {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0 auto;
+  box-shadow: 0 6px 12px rgba(48, 196, 141, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #25a97a;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #777;
+  margin-top: 4rem;
+}
+
+/* Responsive */
+@media screen and (min-width: 600px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .text-block {
+    flex: 1;
+    padding-right: 1rem;
+  }
+
+  .species-img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .fiche-container {
+    padding: 1.2rem 1rem;
+    margin: 2rem 1rem;
+    border-radius: 12px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .species-img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .latin-name {
+    font-size: 1rem;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .info-item h4 {
+    font-size: 0.95rem;
+  }
+
+  .info-item p {
+    font-size: 0.9rem;
+  }
+
+  .description-section,
+  .funfact-section {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .back-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.7rem;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+}

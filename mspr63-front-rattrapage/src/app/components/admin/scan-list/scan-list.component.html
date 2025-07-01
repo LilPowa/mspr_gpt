@@ -1,0 +1,24 @@
+<div class="scan-container">
+  <h2>Liste des Scans</h2>
+
+  <div *ngFor="let scan of scans" class="scan-card">
+    <img [src]="scan.photo" alt="Scan image" />
+    <div class="info">
+      <p><strong>Utilisateur:</strong> {{ scan.email }}</p>
+      <p><strong>Espèce détectée:</strong> {{ scan.especeDetectee }}</p>
+      <p><strong>Date:</strong> {{ scan.date | date: 'short' }}</p>
+      <p><strong>Taux de confiance:</strong> {{ scan.confidence | number:'1.2-2' }} %</p>
+      <p><strong>Temps d'exécution:</strong> {{ scan.executionTimeMs }} ms</p>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <button 
+      *ngFor="let page of totalPages"
+      (click)="loadScans(page)"
+      [class.active]="page === currentPage"
+    >
+      {{ page }}
+    </button>
+  </div>
+</div>

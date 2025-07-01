@@ -1,0 +1,24 @@
+<div class="register-container">
+  <h2>Inscription</h2>
+  <form (ngSubmit)="register()">
+    <label for="nom">Nom</label>
+    <input type="text" id="nom" [(ngModel)]="nom" name="nom" required>
+
+    <label for="prenom">Prénom</label>
+    <input type="text" id="prenom" [(ngModel)]="prenom" name="prenom" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" [(ngModel)]="email" name="email" required>
+
+    <label for="password">Mot de passe</label>
+    <input type="password" id="password" [(ngModel)]="password" name="password" required>
+
+    <button type="submit" [disabled]="!nom || !prenom || !email || !password">S'inscrire</button>
+
+    <p class="message">{{ message }}</p>
+  </form>
+
+  <div class="redirect-link">
+    <button routerLink="/connexion" class="redirect-button">Déjà un compte ? Connectez-vous</button>
+  </div>
+</div>

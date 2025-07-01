@@ -1,0 +1,132 @@
+/* --------------------------- Base Mobile First ---------------------------- */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #30c48d;
+  padding: 10px 16px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+  margin: 4px 0;
+}
+
+.navbar a:hover {
+  color: #60a5fa; /* hover color blue-400 */
+}
+
+.navbar .spacer {
+  flex-grow: 1;
+}
+
+.navbar a img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.logout-btn {
+  background: #ef4444; /* red-500 */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+  margin: 4px 0;
+}
+
+.logout-btn:hover {
+  background: #dc2626; /* red-600 */
+}
+
+.error-banner {
+  background-color: #dc2626; /* rouge foncé */
+  color: white;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+
+/* --------------------------- Tablette ---------------------------- */
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    padding: 12px 32px;
+  }
+
+  .navbar a {
+    font-size: 16px;
+    margin: 0 10px;
+  }
+
+  .logout-btn {
+    padding: 10px 16px;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+}
+
+/* --------------------------- Desktop ---------------------------- */
+
+@media screen and (min-width: 1024px) {
+  .navbar a {
+    font-size: 18px;
+    margin: 0 20px;
+  }
+
+  .logout-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 16px;
+    gap: 8px;
+  }
+
+  .navbar a {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    margin: 4px 0;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #e0f2fe;
+  }
+
+  .logout-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 15px;
+  }
+}

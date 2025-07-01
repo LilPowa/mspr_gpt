@@ -1,0 +1,44 @@
+<div class="fiche-container" *ngIf="espece">
+  <div class="header">
+    <div class="text-block">
+      <h1 class="title">{{ espece.espece }}</h1>
+      <h3 class="latin-name"><em>{{ espece.nomLatin }}</em></h3>
+    </div>
+    <img *ngIf="espece.image" [src]="espece.image" class="species-img" alt="Image de l'espèce" />
+  </div>
+
+  <div class="info-grid">
+    <div class="info-item">
+      <h4>Famille</h4>
+      <p>{{ espece.famille }}</p>
+    </div>
+    <div class="info-item">
+      <h4>Taille</h4>
+      <p>{{ espece.taille }}</p>
+    </div>
+    <div class="info-item">
+      <h4>Région</h4>
+      <p>{{ espece.region }}</p>
+    </div>
+    <div class="info-item">
+      <h4>Habitat</h4>
+      <p>{{ espece.habitat }}</p>
+    </div>
+  </div>
+
+  <section class="description-section">
+    <h3>Description</h3>
+    <p>{{ espece.description }}</p>
+  </section>
+
+  <section class="funfact-section">
+    <h3>Fun Fact</h3>
+    <p>{{ espece.funFact }}</p>
+  </section>
+
+  <button class="back-btn" routerLink="/scans">← Retour à la liste</button>
+</div>
+
+<div *ngIf="!espece" class="loading">
+  Chargement de la fiche...
+</div>

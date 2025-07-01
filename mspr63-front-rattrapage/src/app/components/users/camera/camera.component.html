@@ -1,0 +1,33 @@
+<div class="camera-container">
+  <div class="preview-box">
+    <video #video autoplay muted playsinline [hidden]="photoUrl"></video>
+    <img *ngIf="photoUrl" [src]="photoUrl" alt="Photo capturée" class="captured" />
+
+    <button *ngIf="!photoUrl" (click)="capturePhoto()" class="capture-btn">📸</button>
+    <button *ngIf="photoUrl" (click)="removePhoto()" class="remove-btn">✖</button>
+
+    <!-- Loader -->
+    <div *ngIf="loading" class="loader-overlay">
+      <div class="loader"></div>
+    </div>
+  </div>
+</div>
+
+<div class="results" *ngIf="analyses.length > 0">
+  <div class="result-card" *ngFor="let a of analyses">
+    <div class="result-imgs">
+      <img *ngIf="a.photo" [src]="a.photo" class="user-photo" alt="Photo utilisateur" />
+      <img *ngIf="a.image" [src]="a.image" class="species-img" alt="Image espèce" />
+    </div>
+    <div class="result-info">
+      <h3>{{ a.species }}</h3>
+      <em>{{ a.nomLatin }}</em>
+      <p><strong>Famille :</strong> {{ a.famille }}</p>
+      <p><strong>Taille :</strong> {{ a.taille }}</p>
+      <p><strong>Région :</strong> {{ a.region }}</p>
+      <p><strong>Habitat :</strong> {{ a.habitat }}</p>
+      <p><strong>Fait amusant :</strong> {{ a.funFact }}</p>
+      <p><strong>Description :</strong> {{ a.description }}</p>
+    </div>
+  </div>
+</div>
